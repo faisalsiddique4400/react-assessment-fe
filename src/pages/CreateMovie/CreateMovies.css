@@ -1,0 +1,113 @@
+/* Desktop design */
+.create-movies-main-container{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 70px 0;
+}
+.create-movies-box{
+    padding: 0 20px;
+    display: block;
+}
+.create-movies-mobile-box{
+    display: none;
+}
+.create-movie-title{
+    font-size: 36px;
+    letter-spacing: 1.3px;
+    color: white;
+    font-weight: bold;
+    padding-bottom: 60px;
+}
+.create-movie-form-row{
+        display: flex;
+        justify-content: center;
+       margin: 0 -15px;
+}
+.create-movie-col-6{
+    width: 50%;
+    padding: 0 15px;
+    /* margin: 0 -15px; */
+}
+.create-movie-form-input{   
+    background: #224957;
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: white;
+}
+.create-movie-form-input::placeholder{
+    color: white;
+}
+.form-buttons{
+    margin-top: 30px;
+}
+.btn_cancle{
+    background-color: none;
+    padding: 10px 35px;
+    border: 1px solid white;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.btn_submit{
+    background-color: #2BD17E;
+    padding: 10px 35px;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+.custom-uploader .ant-upload-select{
+    width: 100% !important ;
+    height: 400px !important;
+}
+
+
+/* mobile design */
+@media (max-width: 610px){
+    .create-movies-mobile-box{
+        margin: 0 20px;
+        display: block;
+    }
+    .create-movies-box{
+        display: none;
+    }
+    .form-buttons{
+        display: flex;
+        justify-content: center;
+    }
+    .create-movie-form-input{   
+        width: 100%;
+    }
+    .create-movie-title {
+        font-size: 23px;
+        padding-bottom: 30px;
+    }
+    .custom-uploader .ant-upload-select{
+        width: 100% !important ;
+        height: 300px !important;
+    }
+}
+
+@media (max-width: 315px){
+    .btn_cancle, .btn_submit{
+        padding: 5px 12px;
+        font-size: 12px;
+    }
+    .form-buttons{
+        margin-top: 10px;
+    }
+    .custom-uploader .ant-upload-select{
+        width: 100% !important ;
+        height: 200px !important;
+    }
+    .create-movie-title {
+        font-size: 16px;
+        letter-spacing: 1.3px;
+        color: white;
+        font-weight: bold;
+        padding-bottom: 20px;
+    }
+    
+}
