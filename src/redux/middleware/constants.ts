@@ -1,0 +1,97 @@
+export const baseUrl = 'https://admin.sadaynaal.com';
+
+export const userData = {
+  id: 6,
+  user_type: 'Company Admin',
+  name: 'CA ASM 2',
+  email: 'ca_asm2@chefadmin.com',
+  phone: '123',
+  company_id: 2,
+  password: '$2y$10$Z2et2u/f.dR66y2doofWYeOJxkphA7dAROITt2DqNcerFFvR8Gj0O',
+  status: 1,
+  email_verified_at: null,
+  remember_token: null,
+  is_email_verified: 1,
+  created_at: '2022-10-01T18:06:55.000000Z',
+  updated_at: '2022-10-02T00:32:46.000000Z',
+  company_name: 'Aisha Steel Mills',
+  designation: [
+    {
+      id: 41,
+      user_id: 6,
+      designation_id: 3,
+      created_at: '2022-10-02T00:32:46.000000Z',
+      updated_at: '2022-10-02T00:32:46.000000Z',
+      designation: 'CA - Costing Manager',
+    },
+    {
+      id: 42,
+      user_id: 6,
+      designation_id: 2,
+      created_at: '2022-10-02T00:32:46.000000Z',
+      updated_at: '2022-10-02T00:32:46.000000Z',
+      designation: 'CA - Inventory Admin',
+    },
+  ],
+  permissions: [
+    {
+      permission: 'Menu',
+      perm_status_id: 2,
+      perm_status: 'Grant Access',
+      id: 199,
+      user_id: 6,
+      permission_id: 1,
+      perm_create: 0,
+      created_at: '2022-10-02T00:32:46.000000Z',
+      updated_at: '2022-10-02T00:32:46.000000Z',
+    },
+    {
+      permission: 'Combos',
+      perm_status_id: 2,
+      perm_status: 'Grant Access',
+      id: 200,
+      user_id: 6,
+      permission_id: 3,
+      perm_create: 0,
+      created_at: '2022-10-02T00:32:46.000000Z',
+      updated_at: '2022-10-02T00:32:46.000000Z',
+    },
+  ],
+  brands: [
+    {
+      brand_name: 'ASM-2',
+      id: 14,
+      user_id: 6,
+      brand_id: 2,
+      created_at: '2022-10-02T00:32:46.000000Z',
+      updated_at: '2022-10-02T00:32:46.000000Z',
+      currency_id: '4',
+      currency_name: 'PKR',
+      shops: [
+        {
+          id: 4,
+          shop_name: 'ASM-SHOP-3',
+        },
+        {
+          id: 5,
+          shop_name: 'ASM-SHOP-4',
+        },
+      ],
+    },
+  ],
+  shops: [],
+  roles: [
+    {
+      id: 3,
+      name: 'Company Admin',
+      guard_name: 'web',
+      created_at: '2022-09-30T12:01:05.000000Z',
+      updated_at: '2022-09-30T12:01:05.000000Z',
+      pivot: {
+        model_id: 6,
+        role_id: 3,
+        model_type: 'App\\Models\\User',
+      },
+    },
+  ],
+};

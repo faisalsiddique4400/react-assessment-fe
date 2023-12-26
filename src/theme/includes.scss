@@ -1,0 +1,88 @@
+// Colors
+$primary1: #3a99fc !default;
+$secondary1: #728096 !default;
+$lightText: #ffffff !default;
+$mediumText: #373737d4 !default;
+$darkText: #000000 !default;
+$altText: #728096 !default;
+$mutedText: #ababb6 !default;
+$titleText: #9a9a9a !default;
+$pageBg: #fbfafb !default;
+$error: #ff4444 !default;
+$warning: #ff8800 !default;
+$success: #00c851 !default;
+$transparent: transparent !default;
+$placeholderText: $mutedText !default;
+$lightContainerBg: #ffffff !default;
+$defaultShadowColor: rgba(0, 0, 0, 0.25) !default;
+$defaultItemBorderColor: #dfe4e7 !default;
+$defaultLabelColor: #776e75 !default;
+$loadingPlaceholderColor: #e9ecef;
+$divider: #a8a8a8;
+$accent: #3978ef;
+$black: #121212;
+$gray: #333;
+$lightGray: rgba(#000, 0.1);
+$pageHeaderBgColor: #d3d0cf;
+$pageheaderTxtColor: #0e62c9;
+$pageHeaderBgColorHover: 245, 243, 239;
+$pageheaderHeadingColor: #7889a4;
+$pageheaderWidth: 220px;
+$pagecontentBgColor: #f0f1f6;
+$pagecontentTxtColor: #171616;
+$pagecontentBlockColor: #fff;
+$white: #fff;
+$black: #212121;
+$blue: #00b9eb;
+$red: #ec1848;
+$borderRadius: 4px;
+$borderColor: #e3ddd0;
+$boxShadow: 0 0 10px -2px rgba(0, 0, 0, 0.075);
+
+// Font sizes
+$extraOrdinaryLarge: 2.5rem !default;
+$extraLarge: 1.25rem !default;
+$large: 1.125rem !default;
+$normal: 1rem !default;
+$small: 0.875rem !default;
+$extraSmall: 0.75rem !default;
+$tiny: 0.5rem !default;
+
+// Margins & Paddings Spaces
+$extraSmallSpace: 4px !default;
+$smallSpace: 10px !default;
+$smallMediumSpace: 16px !default;
+$mediumSpace: 20px !default;
+$extraMediumSpace: 25px !default;
+$largeSpace: 30px !default;
+$extraLargeSpace: 40px !default;
+$extraExtraSmallSpace: 2px;
+
+// Icons
+$defaultIconSize: 24px !default;
+$defaultIconColor: #6f7c8e !default;
+$defaultIconActiveColor: #545d6b !default;
+
+//Theme
+$themeColor1: #ffedc7; // Specially For Sidebar
+$themeColor2: #fedd94;
+$themeColor3: #febd2f; // Specially For Buttons
+$themeColor4: #c68801;
+$themeColor5: #604200;
+$themeColor6: #f9ab01;
+
+$themeSidebarColor: #f5f3ef;
+
+// Accent
+$AccentBlue: #3430ff;
+$AccentOrange: #ff8730;
+$AccentRed: #ff303c;
+$AccentPurple: #9830ff;
+
+// Border
+$themeBorderColor: #d3d0cf;
+
+// Text Color
+$themeDarkText: #212121;
+$themeLightText: #a5a5a5;
+$themeMediumText: #8a817e;
