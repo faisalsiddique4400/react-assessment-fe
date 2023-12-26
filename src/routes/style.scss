@@ -1,28 +1,25 @@
 @import '../theme/includes.scss';
 
 :root {
-    --page-header-width: 220px;
-    $borderRadius: 4px;
-  }
-  * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  ul {
-    list-style: none;
-  }
-  
-  a,
-  button {
-    color: inherit;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  button {
-    background: none;
-    cursor: pointer;
-  }
+  --page-header-width: 220px;
+  $borderRadius: 4px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #093545;
+}
+
+ul {
+  list-style: none;
+}
+
+
+a {
+  text-decoration: none;
+}

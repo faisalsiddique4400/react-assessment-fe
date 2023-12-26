@@ -11,11 +11,11 @@ import { useTranslation } from 'react-i18next';
 export const App = () => {
   const checkProtectedRoute = () => {
     const token = Utils.getCurrentToken();
-    if (!token) return '/auth';
+    if (!token) return '/app';
     else return '/app';
   };
   const { i18n } = useTranslation();
-  document.body.dir = i18n.language === 'en' ? 'ltr' : 'rtl';
+  document.body.dir = i18n.language === 'en' ? 'rtl' : 'ltr';
   return (
     // <div dir={i18n.language === 'en' ? 'ltr' : 'rtl'}>
     <BrowserRouter>

@@ -2,6 +2,7 @@
 import React from 'react';
 import { Navigate, Route, Routes, redirect } from 'react-router-dom';
 import MoviesList from '../pages/moviesList';
+import EmptyList from '../pages/emptyList';
 import Utils from '../redux/utils';
 export const AppRoutes = () => {
   const user = Utils.getCurrentUser();
@@ -9,8 +10,9 @@ export const AppRoutes = () => {
   
   return (
       <Routes>
-        <Route path="" element={<Navigate to={`/movies`} replace />} />
+        <Route path="" element={<Navigate to={`/app/movies`} replace />} />
         <Route path='/movies' element={<MoviesList/>}/>
+        <Route path='/emptyList' element={<EmptyList/>}/>
         
       </Routes>
     
