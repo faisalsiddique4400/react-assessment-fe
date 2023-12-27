@@ -44,12 +44,20 @@ async function CallApi(apiOptions) {
 const setCurrentUser = (user) => {
   try {
     if (user) {
-      localStorage.setItem('__chefAdminUser', JSON.stringify(user));
+      localStorage.setItem('User', JSON.stringify(user));
     } else {
-      localStorage.removeItem('__chefAdminUser');
+      localStorage.removeItem('User');
     }
   } catch (error) {
     console.log('setCurrentUser -> error', error);
+  }
+};
+
+const removeCurrentUser = () => {
+  try {
+    localStorage.removeItem('User');
+  } catch (error) {
+    console.log('removeCurrentUser -> error', error);
   }
 };
 
@@ -57,8 +65,8 @@ const getCurrentUser = () => {
   let user = null;
   try {
     user =
-      localStorage.getItem('__chefAdminUser') != null
-        ? JSON.parse(localStorage.getItem('__chefAdminUser'))
+      localStorage.getItem('User') != null
+        ? JSON.parse(localStorage.getItem('User'))
         : null;
   } catch (error) {
     console.log('getCurrentUser -> error', error);
@@ -70,9 +78,9 @@ const getCurrentUser = () => {
 const setCurrentToken = (token) => {
   try {
     if (token) {
-      localStorage.setItem('__chefAdminToken', JSON.stringify(token));
+      localStorage.setItem('token', JSON.stringify(token));
     } else {
-      localStorage.removeItem('__chefAdminToken');
+      localStorage.removeItem('token');
     }
   } catch (error) {
     console.log('setCurrentToken -> error', error);
@@ -83,8 +91,8 @@ const getCurrentToken = () => {
   let token = null;
   try {
     token =
-      localStorage.getItem('__chefAdminToken') != null
-        ? JSON.parse(localStorage.getItem('__chefAdminToken'))
+      localStorage.getItem('token') != null
+        ? JSON.parse(localStorage.getItem('token'))
         : null;
   } catch (error) {
     console.log('getCurrentToken -> error', error);
@@ -380,6 +388,7 @@ const Utils = {
   setCurrentShop,
   renderErrorItem,
   getScreenPermission,
+  removeCurrentUser
 };
 
 export default Utils;

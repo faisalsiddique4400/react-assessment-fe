@@ -120,6 +120,22 @@ const getStatus = async () => {
     return error;
   }
 };
+const getMovieList = async () => {
+  try {
+    const apiOptions = {
+      endpoint: `${baseURL}/movie`,
+      headers: {
+        Authorization: `Bearer ${Utils.getCurrentToken()}`,
+      },
+      method: 'GET',
+    };
+    const apiResponse = await Utils.CallApi(apiOptions);
+
+    return apiResponse.data;
+  } catch (error) {
+    return error;
+  }
+};
 
 const Attributes = {
   getAllergens,
@@ -129,6 +145,7 @@ const Attributes = {
   exportCSV,
   getStatus,
   exportCSVForInventory,
+  getMovieList
 };
 
 export default Attributes;

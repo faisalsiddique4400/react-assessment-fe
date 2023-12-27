@@ -7,7 +7,7 @@ const UserLogin = (payload) => {
     try {
       const { email, password } = payload;
       const apiOptions = {
-        endpoint: `${baseURL}/api/login`,
+        endpoint: `${baseURL}/auth/login`,
         headers: {
           'Content-Type': 'application/json',
         },

@@ -33,6 +33,22 @@
     font-style: normal;
     font-weight: 600;
     line-height: 24px;
+    cursor: pointer;
+}
+.add-movie{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.add-icon{
+    padding-top: 10px;
+}
+.logout-section {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    cursor: pointer;
+    padding-top: 10px;
 }
 
 .movies-card {
@@ -82,6 +98,11 @@
     background: #092C39;
     border: 0px !important;
     color: #fff;
+}
+@media (max-width: 768px){
+    .heading-movies p{
+        display: none;
+    }
 }
 
 @media (min-width: 576px) {
