@@ -12,7 +12,9 @@
     margin-left: auto;
     padding: 2rem 1rem;
 }
-
+.ant-alert-success .ant-alert-content{
+    flex: none;
+}
 .heading-movies {
     display: flex;
     justify-content: space-between;

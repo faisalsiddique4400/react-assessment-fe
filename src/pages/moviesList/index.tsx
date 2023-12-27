@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import { Col, Row, Card, Pagination, PaginationProps } from 'antd';
-import './index.scss';
+import { Col, Row, Card, Pagination, PaginationProps, Alert } from 'antd';
 import { useTranslation } from 'react-i18next';
 import Utils from '../../redux/utils';
 import Attributes from '../../redux/middleware/attributes';
 import { useLocation, useNavigate } from 'react-router-dom';
 import MovieActions from "../../redux/middleware/movies";
+import './index.scss';
 
 
 const { Meta } = Card;
@@ -40,8 +40,6 @@ const MoviesList = () => {
     navigate('/auth');
   };
 
-
-
   const itemRender: PaginationProps['itemRender'] = (_, type, originalElement) => {
     if (type === 'prev') {
       return <a>Prev</a>;
@@ -69,7 +67,7 @@ const MoviesList = () => {
     fetchMovies();
   }, [movies]);
 
-
+  console.log(movies);
 
   const { t } = useTranslation('translation', {
     keyPrefix: 'MovieList',
@@ -85,6 +83,9 @@ const MoviesList = () => {
     <>
       <div className='movies-container'>
         <div className='custom-container'>
+      {successMessage && (
+          <Alert message={successMessage} type="success" closable />
+        )}    
           <div className='heading-movies'>
             <div className='add-movie'>
               <h2>{t("My_Movies")}</h2>
@@ -147,6 +148,126 @@ const MoviesList = () => {
               itemRender={itemRender}
             />
           </div>
+        </div>
+        <div className='movies-card'>
+          <Row gutter={[16, 16]}>
+            <Col xs={12} sm={12} md={6} lg={6}>
+              <Card
+                hoverable
+                style={{ ...cardStyle }}
+                cover={<img alt="example" src="/images/test.svg" />}
+              >
+                <Meta title="Movie" description="2021" className='card-content' />
+              </Card>
+            </Col>
+            <Col xs={12} sm={12} md={6} lg={6}>
+              <Card
+                hoverable
+                style={{ ...cardStyle }}
+                cover={<img alt="example" src="/images/test-new.svg" />}
+              >
+                <Meta title="Movie" description="2021" className='card-content' />
+              </Card>
+            </Col>
+            <Col xs={12} sm={12} md={6} lg={6}>
+              <Card
+                hoverable
+                style={{ ...cardStyle }}
+                cover={<img alt="example" src="/images/test-1.svg" />}
+              >
+                <Meta title="Movie" description="2021" className='card-content' />
+              </Card>
+            </Col>
+            <Col xs={12} sm={12} md={6} lg={6}>
+              <Card
+                hoverable
+                style={{ ...cardStyle }}
+                cover={<img alt="example" src="/images/test-new.svg" />}
+              >
+                <Meta title="Movie" description="2021" className='card-content' />
+              </Card>
+            </Col>
+            <Col xs={12} sm={12} md={6} lg={6}>
+              <Card
+                hoverable
+                style={{ ...cardStyle }}
+                cover={<img alt="example" src="/images/test.svg" />}
+              >
+                <Meta title="Movie" description="2021" className='card-content' />
+              </Card>
+            </Col>
+            <Col xs={12} sm={12} md={6} lg={6}>
+              <Card
+                hoverable
+                style={{ ...cardStyle }}
+                cover={<img alt="example" src="/images/test-1.svg" />}
+              >
+                <Meta title="Movie" description="2021" className='card-content' />
+              </Card>
+            </Col>
+            <Col xs={12} sm={12} md={6} lg={6}>
+              <Card
+                hoverable
+                style={{ ...cardStyle }}
+                cover={<img alt="example" src="/images/test.svg" />}
+              >
+                <Meta title="Movie" description="2021" className='card-content' />
+              </Card>
+            </Col>
+            <Col xs={12} sm={12} md={6} lg={6}>
+              <Card
+                hoverable
+                style={{ ...cardStyle }}
+                cover={<img alt="example" src="/images/test-new.svg" />}
+              >
+                <Meta title="Movie" description="2021" className='card-content' />
+              </Card>
+            </Col>
+            <Col xs={12} sm={12} md={6} lg={6}>
+              <Card
+                hoverable
+                style={{ ...cardStyle }}
+                cover={<img alt="example" src="/images/test.svg" />}
+              >
+                <Meta title="Movie" description="2021" className='card-content' />
+              </Card>
+            </Col>
+            <Col xs={12} sm={12} md={6} lg={6}>
+              <Card
+                hoverable
+                style={{ ...cardStyle }}
+                cover={<img alt="example" src="/images/test-1.svg" />}
+              >
+                <Meta title="Movie" description="2021" className='card-content' />
+              </Card>
+            </Col>
+            <Col xs={12} sm={12} md={6} lg={6}>
+              <Card
+                hoverable
+                style={{ ...cardStyle }}
+                cover={<img alt="example" src="/images/test.svg" />}
+              >
+                <Meta title="Movie" description="2021" className='card-content' />
+              </Card>
+            </Col>
+            <Col xs={12} sm={12} md={6} lg={6}>
+              <Card
+                hoverable
+                style={{ ...cardStyle }}
+                cover={<img alt="example" src="/images/test-new.svg" />}
+              >
+                <Meta title="Movie" description="2021" className='card-content' />
+              </Card>
+            </Col>
+          </Row>
+        </div>
+        <div className='pagination-section'>
+          <Pagination total={2}
+            showSizeChanger={false}
+            showQuickJumper={false}
+            pageSize={1}
+            itemRender={itemRender}
+          />
         </div>
       </div>
     </>
