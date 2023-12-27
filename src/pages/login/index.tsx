@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import "./login.scss";
 
 const Login = () => {
@@ -7,21 +7,38 @@ const Login = () => {
       <form className="login-form">
         <h2 className="sign-in-heading">Sign in</h2>
         <div className="form-group">
-          <input type="text" placeholder="Username" name="username" required />
+          <input
+            className="input"
+            type="text"
+            placeholder="Username"
+            name="username"
+            required
+          />
         </div>
         <div className="form-group">
-          <input type="password" placeholder="Password" name="password" required />
+          <input
+            type="password"
+            className="input"
+            placeholder="Password"
+            name="password"
+            required
+          />
         </div>
         <div className="form-group checkbox-container">
-        <input type="checkbox" id="rememberMe" name="rememberMe" />
+          <input
+            className="input"
+            type="checkbox"
+            id="rememberMe"
+            name="rememberMe"
+          />
           <label htmlFor="rememberMe">Remember Me</label>
-          
-
         </div>
-        <button type="submit">Sign In</button>
+        <button className="sign_in_btn" type="submit">
+          Sign In
+        </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

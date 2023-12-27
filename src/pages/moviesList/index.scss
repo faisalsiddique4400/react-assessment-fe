@@ -83,10 +83,15 @@
     border: 0px !important;
     color: #fff;
 }
-
-@media (min-width: 576px) {
+.card-image{
+    height: 400px;
+}
+@media (max-width: 576px) {
     .custom-container {
         max-width: 540px;
+    }
+    .card-image{
+        height: 200px;
     }
 }
 

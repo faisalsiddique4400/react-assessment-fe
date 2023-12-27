@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 // import { ResponseDialog } from '../components';
 
 async function CallApi(apiOptions) {
@@ -26,7 +26,7 @@ async function CallApi(apiOptions) {
             const location = window.location;
             window.location.href = location.origin;
           },
-          type: 'error',
+          type: "error",
           messageArray: [
             `OOPS!`,
             `Your Token has been Expired`,
@@ -44,12 +44,12 @@ async function CallApi(apiOptions) {
 const setCurrentUser = (user) => {
   try {
     if (user) {
-      localStorage.setItem('__chefAdminUser', JSON.stringify(user));
+      localStorage.setItem("__chefAdminUser", JSON.stringify(user));
     } else {
-      localStorage.removeItem('__chefAdminUser');
+      localStorage.removeItem("__chefAdminUser");
     }
   } catch (error) {
-    console.log('setCurrentUser -> error', error);
+    console.log("setCurrentUser -> error", error);
   }
 };
 
@@ -57,11 +57,11 @@ const getCurrentUser = () => {
   let user = null;
   try {
     user =
-      localStorage.getItem('__chefAdminUser') != null
-        ? JSON.parse(localStorage.getItem('__chefAdminUser'))
+      localStorage.getItem("__chefAdminUser") != null
+        ? JSON.parse(localStorage.getItem("__chefAdminUser"))
         : null;
   } catch (error) {
-    console.log('getCurrentUser -> error', error);
+    console.log("getCurrentUser -> error", error);
     user = null;
   }
   return user;
@@ -70,12 +70,12 @@ const getCurrentUser = () => {
 const setCurrentToken = (token) => {
   try {
     if (token) {
-      localStorage.setItem('__chefAdminToken', JSON.stringify(token));
+      localStorage.setItem("__chefAdminToken", JSON.stringify(token));
     } else {
-      localStorage.removeItem('__chefAdminToken');
+      localStorage.removeItem("__chefAdminToken");
     }
   } catch (error) {
-    console.log('setCurrentToken -> error', error);
+    console.log("setCurrentToken -> error", error);
   }
 };
 
@@ -83,11 +83,11 @@ const getCurrentToken = () => {
   let token = null;
   try {
     token =
-      localStorage.getItem('__chefAdminToken') != null
-        ? JSON.parse(localStorage.getItem('__chefAdminToken'))
+      localStorage.getItem("User") != null
+        ? localStorage.getItem("User")
         : null;
   } catch (error) {
-    console.log('getCurrentToken -> error', error);
+    console.log("getCurrentToken -> error", error);
     token = null;
   }
   return token;
@@ -97,14 +97,14 @@ const setCurrentUserPermission = (permissions) => {
   try {
     if (permissions) {
       localStorage.setItem(
-        '__chefAdminPermissions',
+        "__chefAdminPermissions",
         JSON.stringify(permissions)
       );
     } else {
-      localStorage.removeItem('__chefAdminPermissions');
+      localStorage.removeItem("__chefAdminPermissions");
     }
   } catch (error) {
-    console.log('setCurrentUserPermission -> error', error);
+    console.log("setCurrentUserPermission -> error", error);
   }
 };
 
@@ -112,11 +112,11 @@ const getCurrentUserPermission = () => {
   let permission = null;
   try {
     permission =
-      localStorage.getItem('__chefAdminPermissions') != null
-        ? JSON.parse(localStorage.getItem('__chefAdminPermissions'))
+      localStorage.getItem("__chefAdminPermissions") != null
+        ? JSON.parse(localStorage.getItem("__chefAdminPermissions"))
         : null;
   } catch (error) {
-    console.log('__chefAdminPermissions -> error', error);
+    console.log("__chefAdminPermissions -> error", error);
     permission = null;
   }
   return permission;
@@ -125,12 +125,12 @@ const getCurrentUserPermission = () => {
 const setCurrentMenu = (permissions) => {
   try {
     if (permissions) {
-      localStorage.setItem('__chefAdminMenu', JSON.stringify(permissions));
+      localStorage.setItem("__chefAdminMenu", JSON.stringify(permissions));
     } else {
-      localStorage.removeItem('__chefAdminMenu');
+      localStorage.removeItem("__chefAdminMenu");
     }
   } catch (error) {
-    console.log('setCurrentUserMenu -> error', error);
+    console.log("setCurrentUserMenu -> error", error);
   }
 };
 
@@ -138,11 +138,11 @@ const getCurrentMenu = () => {
   let permission = null;
   try {
     permission =
-      localStorage.getItem('__chefAdminMenu') != null
-        ? JSON.parse(localStorage.getItem('__chefAdminMenu'))
+      localStorage.getItem("__chefAdminMenu") != null
+        ? JSON.parse(localStorage.getItem("__chefAdminMenu"))
         : null;
   } catch (error) {
-    console.log('getCurrentMenu -> error', error);
+    console.log("getCurrentMenu -> error", error);
     permission = null;
   }
   return permission;
@@ -151,12 +151,12 @@ const getCurrentMenu = () => {
 const setBrandList = (brandList) => {
   try {
     if (brandList) {
-      localStorage.setItem('__chefAdminBrands', JSON.stringify(brandList));
+      localStorage.setItem("__chefAdminBrands", JSON.stringify(brandList));
     } else {
-      localStorage.removeItem('__chefAdminBrands');
+      localStorage.removeItem("__chefAdminBrands");
     }
   } catch (error) {
-    console.log('setBrandList -> error', error);
+    console.log("setBrandList -> error", error);
   }
 };
 
@@ -164,11 +164,11 @@ const getBrandList = () => {
   let brandList = null;
   try {
     brandList =
-      localStorage.getItem('__chefAdminBrands') != null
-        ? JSON.parse(localStorage.getItem('__chefAdminBrands'))
+      localStorage.getItem("__chefAdminBrands") != null
+        ? JSON.parse(localStorage.getItem("__chefAdminBrands"))
         : null;
   } catch (error) {
-    console.log('getBrandList -> error', error);
+    console.log("getBrandList -> error", error);
     brandList = null;
   }
   return brandList;
@@ -177,12 +177,12 @@ const getBrandList = () => {
 const setShopList = (shopList) => {
   try {
     if (shopList) {
-      localStorage.setItem('__chefAdminShops', JSON.stringify(shopList));
+      localStorage.setItem("__chefAdminShops", JSON.stringify(shopList));
     } else {
-      localStorage.removeItem('__chefAdminShops');
+      localStorage.removeItem("__chefAdminShops");
     }
   } catch (error) {
-    console.log('setShopList -> error', error);
+    console.log("setShopList -> error", error);
   }
 };
 
@@ -190,11 +190,11 @@ const getShopList = () => {
   let shopList = null;
   try {
     shopList =
-      localStorage.getItem('__chefAdminShops') != null
-        ? JSON.parse(localStorage.getItem('__chefAdminShops'))
+      localStorage.getItem("__chefAdminShops") != null
+        ? JSON.parse(localStorage.getItem("__chefAdminShops"))
         : null;
   } catch (error) {
-    console.log('getShopList -> error', error);
+    console.log("getShopList -> error", error);
     shopList = null;
   }
   return shopList;
@@ -203,12 +203,12 @@ const getShopList = () => {
 const setCompanyList = (companyList) => {
   try {
     if (companyList) {
-      localStorage.setItem('__chefAdminCompany', JSON.stringify(companyList));
+      localStorage.setItem("__chefAdminCompany", JSON.stringify(companyList));
     } else {
-      localStorage.removeItem('__chefAdminCompany');
+      localStorage.removeItem("__chefAdminCompany");
     }
   } catch (error) {
-    console.log('setCompanyList -> error', error);
+    console.log("setCompanyList -> error", error);
   }
 };
 
@@ -216,11 +216,11 @@ const getCompanyList = () => {
   let companyList = null;
   try {
     companyList =
-      localStorage.getItem('__chefAdminCompany') != null
-        ? JSON.parse(localStorage.getItem('__chefAdminCompany'))
+      localStorage.getItem("__chefAdminCompany") != null
+        ? JSON.parse(localStorage.getItem("__chefAdminCompany"))
         : null;
   } catch (error) {
-    console.log('getCompanyList -> error', error);
+    console.log("getCompanyList -> error", error);
     companyList = null;
   }
   return companyList;
@@ -229,12 +229,12 @@ const getCompanyList = () => {
 const setCurrentCompany = (company) => {
   try {
     if (company) {
-      localStorage.setItem('__currentCompany', JSON.stringify(company));
+      localStorage.setItem("__currentCompany", JSON.stringify(company));
     } else {
-      localStorage.removeItem('__currentCompany');
+      localStorage.removeItem("__currentCompany");
     }
   } catch (error) {
-    console.log('setCurrentCompany -> error', error);
+    console.log("setCurrentCompany -> error", error);
   }
 };
 
@@ -242,11 +242,11 @@ const getCurrentCompany = () => {
   let company = null;
   try {
     company =
-      localStorage.getItem('__currentCompany') != null
-        ? JSON.parse(localStorage.getItem('__currentCompany'))
+      localStorage.getItem("__currentCompany") != null
+        ? JSON.parse(localStorage.getItem("__currentCompany"))
         : null;
   } catch (error) {
-    console.log('getCurrentCompany -> error', error);
+    console.log("getCurrentCompany -> error", error);
     company = null;
   }
   return company;
@@ -255,12 +255,12 @@ const getCurrentCompany = () => {
 const setCurrentBrand = (brand) => {
   try {
     if (brand) {
-      localStorage.setItem('__currentBrand', JSON.stringify(brand));
+      localStorage.setItem("__currentBrand", JSON.stringify(brand));
     } else {
-      localStorage.removeItem('__currentBrand');
+      localStorage.removeItem("__currentBrand");
     }
   } catch (error) {
-    console.log('setCurrentBrand -> error', error);
+    console.log("setCurrentBrand -> error", error);
   }
 };
 
@@ -268,11 +268,11 @@ const getCurrentBrand = () => {
   let brand = null;
   try {
     brand =
-      localStorage.getItem('__currentBrand') != null
-        ? JSON.parse(localStorage.getItem('__currentBrand'))
+      localStorage.getItem("__currentBrand") != null
+        ? JSON.parse(localStorage.getItem("__currentBrand"))
         : null;
   } catch (error) {
-    console.log('getCurrentBrand -> error', error);
+    console.log("getCurrentBrand -> error", error);
     brand = null;
   }
   return brand;
@@ -281,12 +281,12 @@ const getCurrentBrand = () => {
 const setCurrentShop = (shop) => {
   try {
     if (shop) {
-      localStorage.setItem('__currentShop', JSON.stringify(shop));
+      localStorage.setItem("__currentShop", JSON.stringify(shop));
     } else {
-      localStorage.removeItem('__currentShop');
+      localStorage.removeItem("__currentShop");
     }
   } catch (error) {
-    console.log('setCurrentShop -> error', error);
+    console.log("setCurrentShop -> error", error);
   }
 };
 
@@ -294,11 +294,11 @@ const getCurrentShop = () => {
   let shop = null;
   try {
     shop =
-      localStorage.getItem('__currentShop') != null
-        ? JSON.parse(localStorage.getItem('__currentShop'))
+      localStorage.getItem("__currentShop") != null
+        ? JSON.parse(localStorage.getItem("__currentShop"))
         : null;
   } catch (error) {
-    console.log('getCurrentBrand -> error', error);
+    console.log("getCurrentBrand -> error", error);
     shop = null;
   }
   return shop;
@@ -337,12 +337,12 @@ export const getScreenPermission = (Option) => {
   let screens = null;
   try {
     screens =
-      localStorage.getItem('__chefAdminPermissions') != null
-        ? JSON.parse(localStorage.getItem('__chefAdminPermissions'))
+      localStorage.getItem("__chefAdminPermissions") != null
+        ? JSON.parse(localStorage.getItem("__chefAdminPermissions"))
         : null;
   } catch (error) {
     console.log(
-      '>>>>: src/helpers/Utils.js  : getScreenPermission -> error',
+      ">>>>: src/helpers/Utils.js  : getScreenPermission -> error",
       error
     );
     screens = null;
