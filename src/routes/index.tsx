@@ -11,22 +11,21 @@ import { useTranslation } from "react-i18next";
 export const App = () => {
   const checkProtectedRoute = () => {
     const token = Utils.getCurrentToken();
-    if (!token) return '/auth';
-    else return '/app';
+    if (!token) return "/app";
+    else return "/app";
   };
   const { i18n } = useTranslation();
-  document.body.dir = i18n.language === 'en' ? 'ltr' : 'ltr';
+  document.body.dir = i18n.language === "en" ? "ltr" : "ltr";
   return (
     // <div dir={i18n.language === 'en' ? 'ltr' : 'rtl'}>
     <BrowserRouter>
       <Routes>
-      <Route
+        <Route
           path="/"
           element={<Navigate replace to={checkProtectedRoute()} />}
         />
         <Route path="/auth/*" element={<AuthRoutes />} />
         <Route path="/app/*" element={<AppRoutes />} />
-      
       </Routes>
     </BrowserRouter>
     // </div>
