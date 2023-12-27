@@ -105,9 +105,13 @@
     }
 }
 
-@media (min-width: 576px) {
+
+@media (max-width: 576px) {
     .custom-container {
         max-width: 540px;
+    }
+    .card-image{
+        height: 200px;
     }
 }
 

@@ -15,9 +15,17 @@
     "title": "Your movie list is empty",
     "btn text": "Add a new movie"
   },
-  "Movies List":{
-    "title": "My movies",
-    "logout": "Logout"
+  "CreateMovies":{
+     "Add_movie" : "Drop an image here",
+     "title": "Title",
+     "publish_year": "Publishing Year",
+     "Create_movie": " CREATE A NEW MOVIE",
+     "Cancel_btn": "Cancel",
+     "Submit_btn": "Submit"
+  },
+  "MovieList":{
+    "Logout": "Logout",
+    "My_Movies": "MY MOVIES"
   }
   
   

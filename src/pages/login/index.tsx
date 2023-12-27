@@ -82,6 +82,7 @@ const Login = () => {
         <h2 className="sign-in-heading">{t("title")}</h2>
         <div className="form-group">
           <input
+          className='inputField'
             type="text"
             placeholder="Email"
             name="username"
@@ -92,6 +93,7 @@ const Login = () => {
         </div>
         <div className="form-group">
           <input
+          className='inputField'
             type="password"
             placeholder="Password"
             name="password"
@@ -102,6 +104,7 @@ const Login = () => {
         </div>
         <div className="form-group checkbox-container">
           <input
+          className='inputField'
             type="checkbox"
             id="rememberMe"
             name="rememberMe"
@@ -121,7 +124,7 @@ const Login = () => {
             loading={loading}
           />
         ) : (
-          <button type="submit">{t("title")}</button>
+          <button type="submit" className='sign_in_btn'>{t("title")}</button>
         )}
 
         {/* Display success message using Ant Design Alert */}

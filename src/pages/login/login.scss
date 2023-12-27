@@ -30,8 +30,8 @@
   margin-bottom: 15px;
 }
 
-input[type="text"],
-input[type="password"] {
+.inputField[type="text"],
+.inputField[type="password"] {
   width: 300px;
   height: 45px;
   padding: 0 8px;
@@ -45,7 +45,7 @@ input[type="password"] {
   text-align: left;
 }
 
-input::placeholder {
+.inputField::placeholder {
   color: #fff;
   font-size: 14px;
   font-style: normal;
@@ -53,7 +53,7 @@ input::placeholder {
   line-height: 24px;
 }
 
-input[type="checkbox"] {
+.inputField[type="checkbox"] {
   background: #224957;
   width: 18px;
   height: 17px;
@@ -79,7 +79,7 @@ label {
   align-items: center;
 }
 
-button {
+.sign_in_btn {
   width: 100%;
   border-radius: 10px;
   background: var(--primary, #2BD17E);
@@ -94,8 +94,8 @@ button {
 
 @media only screen and (max-width:576px) {
 
-  input[type="text"],
-  input[type="password"] {
+  .inputField[type="text"],
+  .inputField[type="password"] {
     width: 260px;
   }
 }
