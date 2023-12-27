@@ -24,12 +24,12 @@ const beforeUpload = (file: any) => {
 };
 
 const CreateMovies = () => {
-  const { t } = useTranslation('translation', {
-    keyPrefix: 'branch',
+  const { t } = useTranslation("translation", {
+    keyPrefix: "branch",
   });
   const [loading, setLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState();
-  const handleChange = (info: any ) => {
+  const handleChange = (info: any) => {
     if (info.file.status === "uploading") {
       setLoading(true);
       return;
