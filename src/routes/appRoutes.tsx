@@ -4,7 +4,7 @@ import { Navigate, Route, Routes, redirect } from 'react-router-dom';
 import MoviesList from '../pages/moviesList';
 import EmptyList from '../pages/emptyList';
 import Utils from '../redux/utils';
-import CreateMovies from "../pages/CreateMovie/CreateMovies";
+import CreateMovies from "../pages/CreateMovie";
 
 export const AppRoutes = () => {
   console.log("ROUTES");

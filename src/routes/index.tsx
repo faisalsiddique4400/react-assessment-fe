@@ -15,7 +15,7 @@ export const App = () => {
     else return '/app';
   };
   const { i18n } = useTranslation();
-  document.body.dir = i18n.language === 'en' ? 'ltr' : 'rtl';
+  document.body.dir = i18n.language === 'en' ? 'ltr' : 'ltr';
   return (
     // <div dir={i18n.language === 'en' ? 'ltr' : 'rtl'}>
     <BrowserRouter>
