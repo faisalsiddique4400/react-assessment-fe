@@ -5,6 +5,7 @@ import App from "../src/routes";
 import reportWebVitals from './reportWebVitals';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n/i18n';
+import Footer from "./assets/footer.png";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -13,6 +14,7 @@ root.render(
   <I18nextProvider i18n={i18n}>
   <React.StrictMode>
     <App />
+    <img src={Footer} alt="Footer" height={111} width={"100%"}/>
   </React.StrictMode>
   </I18nextProvider>
 );

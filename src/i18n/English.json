@@ -8,7 +8,9 @@
     "title": "Sign In",
     "Checkbox lable": "Remeber me",
     "User Required": "Email Required",
-    "Password Required": "Password Required"
+    "Password Required": "Password Required",
+    "error": "Invalid Credentials. Please Try Again",
+    "success": "Login successful!"
     
   },
   "Empty List":{
@@ -20,12 +22,15 @@
      "title": "Title",
      "publish_year": "Publishing Year",
      "Create_movie": " CREATE A NEW MOVIE",
+     "edit_movie": "EDIT",
      "Cancel_btn": "Cancel",
      "Submit_btn": "Submit"
   },
   "MovieList":{
     "Logout": "Logout",
-    "My_Movies": "MY MOVIES"
+    "My_Movies": "MY MOVIES",
+    "error": "Something Went Wrong!",
+    "logout": "Logout Successfully!"
   }
   
   

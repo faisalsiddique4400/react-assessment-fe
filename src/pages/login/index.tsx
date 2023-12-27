@@ -6,7 +6,7 @@ import Utils from '../../redux/utils';
 import { useNavigate } from 'react-router-dom';
 import { css } from '@emotion/react';
 import { ClipLoader } from 'react-spinners';
-import { Alert, Space } from 'antd';
+import { Alert, Space, message } from 'antd';
 
 
 const Login = () => {
@@ -58,19 +58,21 @@ const Login = () => {
       setLoading(true); // Set loading to true when login is in progress
 
       const response = await UserLogin({ email: username, password });
-
-      console.log('Login success:', response);
       if (response?.success) {
         Utils.setCurrentToken(response?.data);
         setUsername('');
         setPassword('');
         setRememberMe(false);
         setError('');
-        navigate('/app/movies', { state: { successMessage: 'Login successful!' } });
+        message.success(t("success"));
+        navigate('/app/movies', { state: { successMessage: t("success") } });
+      }
+      else {
+        message.error(t("error"))
       }
     } catch (error) {
       console.error('Login error:', error);
-      setError('Invalid credentials. Please try again.');
+      setError(t("error"));
     } finally {
       setLoading(false); // Reset loading state when login attempt is complete
     }

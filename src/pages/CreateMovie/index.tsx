@@ -1,16 +1,15 @@
-import { useEffect, useState } from "react";
 import React from "react";
+import { useEffect, useState } from "react";
 import "../CreateMovie/CreateMovies.css";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
 import { message, Upload } from "antd";
 import { Input } from "antd";
 import { useTranslation } from "react-i18next";
 import MovieActions from "../../redux/middleware/movies";
-import { toHaveAccessibleDescription } from "@testing-library/jest-dom/matchers";
 import { Alert } from "antd";
 import { RcFile } from "antd/es/upload";
 import { baseURL } from "../../config/constant";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const onClose = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
   console.log(e, "I was closed.");
@@ -29,6 +28,8 @@ const beforeUpload = (file: any) => {
 };
 
 const CreateMovies = () => {
+  const location = useLocation();
+  const {data, update} = location.state || {};
   const { t } = useTranslation("translation", {
     keyPrefix: "CreateMovies",
   });
@@ -40,6 +41,15 @@ const CreateMovies = () => {
   const [imageBase64, setImageBase64] = useState<string>();
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if(update){
+      setImageUrl(data?.poster);
+      setImageBase64(data?.poster);
+      setTitle(data?.title);
+      setPublishYear(data?.year)
+    }
+  }, [update])
 
   const getBase64 = (file: RcFile): Promise<string> =>
     new Promise((resolve, reject) => {
@@ -68,16 +78,24 @@ const CreateMovies = () => {
       setShowError(true);
       return;
     } else {
-      const values = await MovieActions.uploadImage(imageUrl);
-      console.log(values);
+      const values = update && imageBase64 === imageUrl  ? null : await MovieActions.uploadImage(imageUrl);
       const payload = {
         title: title,
         year: publishYear,
-        poster: `${baseURL}/uploads/${values?.data?.path}`,
+        poster: update && imageBase64 === imageUrl ? imageUrl :`${baseURL}/uploads/${values?.data?.path}`,
       };
 
-      const finalValue = await MovieActions.addMovie(payload);
-      console.log(finalValue);
+      const response = update ? await MovieActions.updateMovie(data?._id, payload) : await MovieActions.addMovie(payload);
+      console.log(response);
+      if(response?.success)
+      {
+        // Display success message
+        message.success(response?.message);
+        navigate("/app/movies");
+      }
+      else {
+        message.success(response?.message);
+      }
     }
 
     setTitle("");
@@ -86,14 +104,13 @@ const CreateMovies = () => {
     setImageUrl(undefined);
     setLoading(false);
     setShowError(false);
-
-    navigate("/app/movies");
   };
 
   const handleCancle = () => {
     setTitle("");
     setPublishYear("");
     setImageUrl(undefined);
+    navigate(-1);
   };
 
   const uploadButton = (
@@ -114,7 +131,7 @@ const CreateMovies = () => {
         {/* Desktop design */}
         <div className="create-movies-box">
           <div className="create-movies-heading">
-            <p className="create-movie-title">{t("Create_movie")}</p>
+            <p className="create-movie-title">{update ? t("edit_movie") : t("Create_movie")}</p>
           </div>
           <div className="create-movie-form">
             <div className="create-movie-form-row">
@@ -132,9 +149,7 @@ const CreateMovies = () => {
                     <img
                       src={imageBase64}
                       alt="avatar"
-                      style={{
-                        width: "100%",
-                      }}
+                      className="uploadImage"
                     />
                   ) : (
                     uploadButton

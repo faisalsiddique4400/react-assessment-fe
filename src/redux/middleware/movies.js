@@ -56,10 +56,10 @@ const uploadImage = async (url) => {
   return apiResponse.data;
 };
 
-const updateBranch = async (id, params) => {
+const updateMovie = async (id, params) => {
   try {
     const apiOptions = {
-      endpoint: `${baseURL}/api/shops/${id}`,
+      endpoint: `${baseURL}/movie/${id}`,
       headers: {
         Authorization: `Bearer ${Utils.getCurrentToken()}`,
       },
@@ -76,7 +76,7 @@ const updateBranch = async (id, params) => {
 
 const MovieActions = {
   getMovies,
-  updateBranch,
+  updateMovie,
   addMovie,
   uploadImage,
 };

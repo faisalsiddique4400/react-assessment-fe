@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     background-color: #093545;
-    height: 100vh;
 }
 
 /* CustomContainer.css */
@@ -101,6 +100,33 @@
     border: 0px !important;
     color: #fff;
 }
+.card-image{
+    height: 400px;
+    object-fit: cover;
+}
+
+.loaderContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.editIcon{
+    color: #fff;
+    position: absolute;
+    right: 15px;
+    bottom: 70px;
+}
+
+.editIcon svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+
 @media (max-width: 768px){
     .heading-movies p{
         display: none;
@@ -114,6 +140,11 @@
     }
     .card-image{
         height: 200px;
+    }
+    .editIcon{
+        color: #fff;
+        position: initial;
+        margin-top: 10px;
     }
 }
 

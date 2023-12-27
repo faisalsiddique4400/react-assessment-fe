@@ -17,7 +17,6 @@ export const App = () => {
   const { i18n } = useTranslation();
   document.body.dir = i18n.language === "en" ? "ltr" : "ltr";
   return (
-    // <div dir={i18n.language === 'en' ? 'ltr' : 'rtl'}>
     <BrowserRouter>
       <Routes>
         <Route
@@ -28,7 +27,6 @@ export const App = () => {
         <Route path="/app/*" element={<AppRoutes />} />
       </Routes>
     </BrowserRouter>
-    // </div>
   );
 };
 export default App;
