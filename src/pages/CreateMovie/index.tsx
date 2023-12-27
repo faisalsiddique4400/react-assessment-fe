@@ -78,6 +78,9 @@ const CreateMovies = () => {
 
       const finalValue = await MovieActions.addMovie(payload);
       console.log(finalValue);
+
+      // Display success message
+      message.success("Movie added successfully!");
     }
 
     setTitle("");
