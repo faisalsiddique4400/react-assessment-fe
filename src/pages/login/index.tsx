@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import "./login.scss";
-import AuthActions from "../../redux/middleware/auth";
-import Utils from "../../redux/utils";
+import AuthActions from "../../middleware/auth";
+import Utils from "../../utils/utils";
 import { useNavigate } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import { Alert, message } from "antd";

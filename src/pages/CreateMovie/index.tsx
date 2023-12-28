@@ -4,7 +4,7 @@ import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
 import { InputNumber, message, Upload } from "antd";
 import { Input } from "antd";
 import { useTranslation } from "react-i18next";
-import MovieActions from "../../redux/middleware/movies";
+import MovieActions from "../../middleware/movies";
 import { Alert } from "antd";
 import { RcFile } from "antd/es/upload";
 import { baseURL } from "../../config/constant";
@@ -31,8 +31,7 @@ const CreateMovies = () => {
   const [loading, setLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState<string | undefined>();
   const [title, setTitle] = useState<string>("");
-  const [publishYear, setPublishYear] = useState<string>('2023');
-  const [showError, setShowError] = useState(false);
+  const [publishYear, setPublishYear] = useState<string>("2023");
   const [imageBase64, setImageBase64] = useState<string>();
 
   const navigate = useNavigate();
@@ -70,7 +69,6 @@ const CreateMovies = () => {
   const handleSubmit = async () => {
     if (title === "" || publishYear === "" || imageUrl === undefined) {
       message.error("All the fields are required ");
-      setShowError(true);
       return;
     } else {
       const values =
@@ -104,7 +102,6 @@ const CreateMovies = () => {
     setImageBase64(undefined);
     setImageUrl(undefined);
     setLoading(false);
-    setShowError(false);
   };
 
   const handleCancle = () => {
@@ -112,6 +109,12 @@ const CreateMovies = () => {
     setPublishYear("");
     setImageUrl(undefined);
     navigate(-1);
+  };
+
+  const dummyRequest = ({ file, onSuccess }: any) => {
+    setTimeout(() => {
+      onSuccess("ok");
+    }, 0);
   };
 
   const uploadButton = (
@@ -140,11 +143,12 @@ const CreateMovies = () => {
             <div className="create-movie-form-row">
               <div className="create-movie-col-6">
                 <Upload
+                  accept="image/jpeg,image/jpg,image/png"
                   name="avatar"
                   listType="picture-card"
                   className="avatar-uploader custom-uploader"
                   showUploadList={false}
-                  action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
+                  customRequest={dummyRequest}
                   beforeUpload={beforeUpload}
                   onChange={handleChange}
                 >
@@ -173,7 +177,7 @@ const CreateMovies = () => {
                     className="create-movie-form-input"
                     value={Number(publishYear)}
                     controls={false}
-                    style={{ width: "100%", color:'red' }}
+                    style={{ width: "50%" }}
                     onChange={(value: number | null) =>
                       setPublishYear(String(value))
                     }
@@ -206,13 +210,15 @@ const CreateMovies = () => {
               style={{ width: "100%" }}
               onChange={(e) => setTitle(e.target.value)}
             />
-            <Input
+            <InputNumber
               placeholder={t("publish_year")}
               className="create-movie-form-input"
-              type="number"
-              value={publishYear}
+              value={Number(publishYear)}
+              controls={false}
               style={{ width: "50%" }}
-              onChange={(e) => setPublishYear(e.target.value)}
+              onChange={(value: number | null) => setPublishYear(String(value))}
+              min={1900}
+              max={2023}
             />
           </div>
           <div className="upload-box">
@@ -221,13 +227,13 @@ const CreateMovies = () => {
               listType="picture-card"
               className="avatar-uploader custom-uploader"
               showUploadList={false}
-              action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
+              customRequest={dummyRequest}
               beforeUpload={beforeUpload}
               onChange={handleChange}
             >
-              {imageUrl ? (
+              {imageBase64 ? (
                 <img
-                  src={imageUrl}
+                  src={imageBase64}
                   alt="avatar"
                   style={{
                     width: "100%",
@@ -249,14 +255,6 @@ const CreateMovies = () => {
           </div>
         </div>
       </div>
-      {showError && (
-        <Alert
-          message="ALL fields required"
-          type="error"
-          closable
-          onClose={() => setShowError(false)}
-        />
-      )}
     </div>
   );
 };

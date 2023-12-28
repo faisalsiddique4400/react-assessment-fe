@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Col, Row, Card, Pagination, PaginationProps, message } from "antd";
 import { useTranslation } from "react-i18next";
-import Utils from "../../redux/utils";
+import Utils from "../../utils/utils";
 import { useNavigate } from "react-router-dom";
-import MovieActions from "../../redux/middleware/movies";
+import MovieActions from "../../middleware/movies";
 import { ClipLoader } from "react-spinners";
 import "./index.scss";
 import { EditOutlined } from "@ant-design/icons";

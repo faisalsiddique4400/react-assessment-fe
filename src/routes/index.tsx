@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthRoutes } from "./authRoutes";
 import { AppRoutes } from "./appRoutes";
 import "./style.scss";
-import Utils from "../redux/utils";
+import Utils from "../utils/utils";
 import { useTranslation } from "react-i18next";
 import { Col, Row, Select } from "antd";
 import NotFound from "../pages/NotFound/404";

@@ -1,5 +1,5 @@
-import { baseURL } from "../../config/constant";
-import Utils from "../../redux/utils";
+import { baseURL } from "../config/constant";
+import Utils from "../utils/utils";
 
 const UserLogin = (payload) => {
   // eslint-disable-next-line no-async-promise-executor

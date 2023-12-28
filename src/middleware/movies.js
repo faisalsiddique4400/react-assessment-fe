@@ -1,5 +1,5 @@
-import { baseURL } from "../../config/constant";
-import Utils from "../utils";
+import { baseURL } from "../config/constant";
+import Utils from "../utils/utils";
 
 const getMovies = async (dataLength, page) => {
   try {
