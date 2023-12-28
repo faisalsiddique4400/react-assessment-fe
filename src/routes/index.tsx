@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 export const App = () => {
   const checkProtectedRoute = () => {
     const token = Utils.getCurrentToken();
-    if (!token) return "/app";
+    if (!token) return "/auth";
     else return "/app";
   };
   const { i18n } = useTranslation();
