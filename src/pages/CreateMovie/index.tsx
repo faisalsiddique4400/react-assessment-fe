@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "../CreateMovie/CreateMovies.css";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
-import { message, Upload } from "antd";
+import { InputNumber, message, Upload } from "antd";
 import { Input } from "antd";
 import { useTranslation } from "react-i18next";
 import MovieActions from "../../redux/middleware/movies";
@@ -31,7 +31,7 @@ const CreateMovies = () => {
   const [loading, setLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState<string | undefined>();
   const [title, setTitle] = useState<string>("");
-  const [publishYear, setPublishYear] = useState<string>("");
+  const [publishYear, setPublishYear] = useState<string>('2023');
   const [showError, setShowError] = useState(false);
   const [imageBase64, setImageBase64] = useState<string>();
 
@@ -168,13 +168,17 @@ const CreateMovies = () => {
                     style={{ width: "100%" }}
                     onChange={(e) => setTitle(e.target.value)}
                   />
-                  <Input
+                  <InputNumber
                     placeholder={t("publish_year")}
                     className="create-movie-form-input"
-                    type="number"
-                    value={publishYear}
-                    style={{ width: "50%" }}
-                    onChange={(e) => setPublishYear(e.target.value)}
+                    value={Number(publishYear)}
+                    controls={false}
+                    style={{ width: "100%", color:'red' }}
+                    onChange={(value: number | null) =>
+                      setPublishYear(String(value))
+                    }
+                    min={1900}
+                    max={2023}
                   />
                 </div>
                 <div className="form-buttons">
@@ -227,7 +231,7 @@ const CreateMovies = () => {
                   alt="avatar"
                   style={{
                     width: "100%",
-                    height: "inherit"
+                    height: "inherit",
                   }}
                 />
               ) : (

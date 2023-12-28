@@ -77,6 +77,10 @@
   border-radius: 10px;
 }
 
+.ant-input-number-input{
+  color:white !important
+}
+
 /* mobile design */
 @media (max-width: 610px) {
   .create-movies-mobile-box {
@@ -112,8 +116,7 @@
     padding: 5px 12px;
     font-size: 12px;
   }
-  .create-movies-main-container {
-  }
+
   .form-buttons {
     margin-top: 10px;
   }
