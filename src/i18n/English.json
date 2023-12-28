@@ -11,28 +11,27 @@
     "Password Required": "Password Required",
     "error": "Invalid Credentials. Please Try Again",
     "success": "Login successful!"
-    
   },
-  "Empty List":{
+  "Empty List": {
     "title": "Your movie list is empty",
     "btn text": "Add a new movie"
   },
-  "CreateMovies":{
-     "Add_movie" : "Drop an image here",
-     "title": "Title",
-     "publish_year": "Publishing Year",
-     "Create_movie": " CREATE A NEW MOVIE",
-     "edit_movie": "EDIT",
-     "Cancel_btn": "Cancel",
-     "Submit_btn": "Submit"
+  "CreateMovies": {
+    "Add_movie": "Drop an image here",
+    "title": "Title",
+    "publish_year": "Publishing Year",
+    "Create_movie": " CREATE A NEW MOVIE",
+    "edit_movie": "EDIT",
+    "Cancel_btn": "Cancel",
+    "Submit_btn": "Submit"
   },
-  "MovieList":{
+  "MovieList": {
     "Logout": "Logout",
     "My_Movies": "MY MOVIES",
     "error": "Something Went Wrong!",
     "logout": "Logout Successfully!"
-  }
-  
-  
-  
+  },
+  "NotFound": {
+    "title": "Page non trouvée !"
+  }  
 }

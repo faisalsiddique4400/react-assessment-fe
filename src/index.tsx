@@ -1,22 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
 import App from "../src/routes";
-import reportWebVitals from './reportWebVitals';
-import { I18nextProvider } from 'react-i18next';
-import i18n from './i18n/i18n';
+import reportWebVitals from "./reportWebVitals";
+import { I18nextProvider } from "react-i18next";
+import i18n from "./i18n/i18n";
 import Footer from "./assets/footer.png";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
-  <I18nextProvider i18n={i18n}>
   <React.StrictMode>
-    <App />
-    <img src={Footer} alt="Footer" height={111} width={"100%"}/>
+    <I18nextProvider i18n={i18n}>
+      <App />
+      <img src={Footer} alt="Footer" height={111} width={"100%"} />
+    </I18nextProvider>
   </React.StrictMode>
-  </I18nextProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

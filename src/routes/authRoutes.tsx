@@ -7,8 +7,6 @@ export const AuthRoutes = () => {
   return (
     <Routes>
       <Route path="" element={<Login />} />
-      {/* <Route path="/reset-password" element={<ForgotPassword />} /> */}
-      
     </Routes>
   );
 };
