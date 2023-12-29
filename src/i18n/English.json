@@ -20,14 +20,14 @@
     "Add_movie": "Drop an image here",
     "title": "Title",
     "publish_year": "Publishing Year",
-    "Create_movie": " CREATE A NEW MOVIE",
-    "edit_movie": "EDIT",
+    "Create_movie": " Creat a new movie",
+    "edit_movie": "Edit",
     "Cancel_btn": "Cancel",
     "Submit_btn": "Submit"
   },
   "MovieList": {
     "Logout": "Logout",
-    "My_Movies": "MY MOVIES",
+    "My_Movies": "My movies",
     "error": "Something Went Wrong!",
     "logout": "Logout Successfully!"
   },

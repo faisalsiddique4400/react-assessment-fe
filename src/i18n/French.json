@@ -20,14 +20,14 @@
     "Add_movie": "Déposez une image ici",
     "title": "Titre",
     "publish_year": "Année de publication",
-    "Create_movie": "CRÉER UN NOUVEAU FILM",
-    "edit_movie": "MODIFIER",
+    "Create_movie": "Créer un nouveau film",
+    "edit_movie": "Modifier",
     "Cancel_btn": "Annuler",
     "Submit_btn": "Soumettre"
   },
   "MovieList": {
     "Logout": "Déconnexion",
-    "My_Movies": "MES FILMS",
+    "My_Movies": "Mes films",
     "error": "Quelque chose s'est mal passé !",
     "logout": "Déconnexion réussie !"
   },
